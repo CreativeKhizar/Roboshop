@@ -50,7 +50,7 @@ VALIDATE $? "Installing NOdeJS"
 # first check the user exists or not, if not exist then create
 
 id roboshop &>> $LOGFILE
-if [ $? -e 0 ]; then
+if [ $? -eq 0 ]; then
 echo "roboshop user already exists"
 exit 1
 fi
