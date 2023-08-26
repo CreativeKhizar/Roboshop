@@ -50,7 +50,10 @@ VALIDATE $? "Installing NOdeJS"
 # first check the user exists or not, if not exist then create
 
 id roboshop &>> $LOGFILE
-
+if [ $? -e 0 ]; then
+echo "roboshop user already exists"
+exit 1
+fi
 VALIDATE $? "Checking robshop user doesnot exist"
 
 useradd roboshop &>> $LOGFILE
@@ -102,7 +105,8 @@ VALIDATE $? "Copied mongo.repo"
 
 yum install mongodb-org-shell -y &>> $LOGFILE
 
-VALIDATE $? "INstalling mongodb-org-shell"
+VALIDATE $? "Installing mongo client"
 
 mongo --host MONGODB-SERVER-IPADDRESS </app/schema/catalogue.js
 
+VALIDATE $? "LOading catalogue data into mongodb"
