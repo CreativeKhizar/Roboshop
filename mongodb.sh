@@ -4,8 +4,8 @@ LOGSDIR=/tmp
 
 SCRIPT_NAME=$0
 
-LOGFILE=$LOGSDIR/$0-$DATE.log
-USERID=$whoami
+LOGFILE=$(LOGSDIR/$0-$DATE.log)
+USERID=$(whoami)
 
 R="\e[31m"
 G="\e[32m"
