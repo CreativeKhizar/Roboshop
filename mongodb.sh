@@ -1,5 +1,5 @@
 DATE=$(date +%F)
-LOGSDIR=/tmp
+LOGSDIR='/tmp'
 # /home/centos/shell-script-logs/script-name-date.log
 
 SCRIPT_NAME=$0
