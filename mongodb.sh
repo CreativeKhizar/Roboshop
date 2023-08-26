@@ -12,7 +12,6 @@ G="\e[32m"
 N="\e[0m"
 Y="\e[33m"
 
-touch $LOGFILE
 if [ $USERID != "root" ]; then
 echo "$R ERROR:: Please run this script with root access $N"
 fi
@@ -55,9 +54,9 @@ VALIDATE $? "Starting mongod"
 
 sed -i 's/127.0.0.1/0.0.0.0/' /etc/mongod.conf &>> $LOGFILE
 
-VALIDATE$> "Changed adress from 127.0.0.1 to 0.0.0.0" &>> $LOGFILE
+VALIDATE $? "Changed adress from 127.0.0.1 to 0.0.0.0" &>> $LOGFILE
 
 systemctl restart mongod &>> $LOGFILE
 
-VALIDATE "Restarting mongod"
+VALIDATE $? "Restarting mongod"
 
