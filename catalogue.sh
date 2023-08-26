@@ -68,7 +68,7 @@ fi
 
 VALIDATE $? "Creating a directory named app"
 
-curl -o /tmp/catalogue.zip https://roboshop-builds.s3.amazonaws.com/catalogue.zip &>> $LOGFILE
+wget /tmp/catalogue.zip https://roboshop-builds.s3.amazonaws.com/catalogue.zip &>> $LOGFILE
 
 VALIDATE $? "Downloading catalogue.zip"
 
