@@ -12,7 +12,7 @@ G="\e[32m"
 N="\e[0m"
 Y="\e[33m"
 
-
+touch $LOGFILE
 if [ $USERID != "root" ]; then
 echo "$R ERROR:: Please run this script with root access $N"
 fi
